@@ -2,10 +2,6 @@ use machine_learning_starter::Perceptron;
 use machine_learning_starter::MLAlgorithm;
 
 fn main() {
-    let a = &2.0;
-    let b = &5.0;
-    println!("{}", b*a);
-
     let perceptron = &Perceptron::new(&4, &0.01, &100);
     let mut csv_vec = perceptron.load_csv("train_df.csv", "R");
 
@@ -67,10 +63,4 @@ fn main() {
     for row in &submission_set {
         println!("{},{}", row[0], row[1]);
     }
-
-/*    let cv_dataset = perceptron.cross_validation_split(&mut csv_vec);
-
-    println!("{}", (cv_dataset.get(&1).unwrap())[0][60]);*/
-
-//    perceptron.perceptron(&csv_vec, &vec![]);
 }
